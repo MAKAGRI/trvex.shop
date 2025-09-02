@@ -1,182 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAT Cargo VAD LLC</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 20px;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero-text {
-            max-width: 500px;
-            padding: 20px;
-            animation: slideInLeft 1.5s ease;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            animation: slideInRight 1.5s ease;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .contact {
-            background: #e9e9e9;
-            padding: 60px 20px;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAUDOT LOCATION — Real Estate Rental</title>
+  <style>
+    :root{
+      --teal:#0f7b8f;
+      --gold:#e9c46a;
+      --bg:#f6f9fc;
+      --card:#ffffff;
+      --ink:#1f2937;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:var(--teal);text-decoration:none}
+    header{background:var(--teal);color:#fff;text-align:center;padding:28px;border-bottom:5px solid var(--gold)}
+    header h1{margin:0;font-size:2.3rem}
+    header p{margin:6px 0 0;opacity:.95}
+    nav{background:#0e3b46;text-align:center;padding:12px}
+    nav a{color:#fff;margin:0 14px;font-weight:700}
+    nav a:hover{color:var(--gold)}
+    .hero{display:flex;justify-content:center;align-items:center;padding:32px;background:#e8f3f6}
+    .hero img{max-width:1000px;width:95%;border-radius:14px;border:4px solid var(--gold)}
+    .section{max-width:1100px;margin:22px auto;background:var(--card);padding:22px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.07)}
+    .section h2{margin:0 0 10px;color:var(--teal)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    ul{line-height:1.8;margin:0;padding-left:18px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:12px}
+    .gallery img{width:100%;border-radius:10px;border:2px solid #dde6ea}
+    .cta{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:var(--gold);color:#111;font-weight:800;padding:12px 16px;border-radius:10px;display:inline-block}
+    .btn.secondary{background:#fff;border:2px solid var(--teal);color:var(--teal)}
+    footer{background:#0e3b46;color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:5px solid var(--gold)}
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">PAT Cargo VAD LLC</div>
+  <header>
+    <h1>BAUDOT LOCATION</h1>
+    <p>Real Estate Rental & Property Services • Beaune, France</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="https://s0.rbk.ru/v6_top_pics/resized/1200xH/media/img/4/04/347089652810044.jpeg" alt="Real estate hero">
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <div class="two-col">
+      <p><strong>BAUDOT LOCATION</strong> provides trusted <em>real estate rental & leasing</em> solutions in Beaune and the wider Bourgogne-Franche-Comté region. We focus on transparency, efficiency, and client care.</p>
+      <p>Address: <strong>146 Impasse des Meix Fortans Chall, 21200 Beaune, France</strong>. Get in touch to discuss apartments, houses, and commercial properties available now.</p>
+    </div>
+    <div class="cta">
+      <a class="btn" href="tel:+33745458817">Call: +33 7 45 45 88 17</a>
+      <a class="btn secondary" href="mailto:admin@trvex.shop">Email: admin@trvex.shop</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Residential Leasing (apartments & houses)</li>
+      <li>Commercial Rentals & Management</li>
+      <li>Property Marketing & Viewings</li>
+      <li>Tenant Screening & Lease Support</li>
+      <li>Advisory for Owners & Investors</li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1153625290%2F960x0.jpg%3Ffit%3Dscale" alt="Property 1">
+      <img src="https://avatars.mds.yandex.net/i?id=52e50ed90f8fb1eda135bc80a912286c_l-5859086-images-thumbs&ref=rim&n=13&w=1920&h=1080" alt="Property 2">
+      <img src="https://imageio.forbes.com/specials-images/imageserve/5f49130c81fb074d29206ea2/0x0.jpg?format=jpg&width=1200" alt="Property 3">
+      <img src="https://s0.rbk.ru/v6_top_pics/resized/1200xH/media/img/3/22/756496798724223.jpg" alt="Property 4">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="two-col">
+      <div>
+        <p>📍 <strong>Address:</strong> 146 Imp. des Meix Fortans Chall, 21200 Beaune, France</p>
+        <p>☎ <strong>Phone:</strong> <a href="tel:+33745458817">+33 7 45 45 88 17</a></p>
+        <p>✉ <strong>Email:</strong> <a href="mailto:admin@trvex.shop">admin@trvex.shop</a></p>
+      </div>
+      <div>
+        <p><em>Office Hours</em></p>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li>Mon–Fri: 9:00–18:00</li>
+          <li>Sat: 10:00–14:00</li>
+          <li>Sun: Closed</li>
         </ul>
-    </nav>
-
-    <div class="hero" id="home">
-        <div class="hero-text">
-            <h1>PAT Cargo VAD LLC</h1>
-            <p>Your trusted partner in transportation and warehousing. We provide reliable cargo services and storage solutions to meet your business needs with efficiency and care.</p>
-        </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Cargo Services">
-        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>PAT Cargo VAD LLC is a Domestic LLC based in Arizona, offering specialized services in transportation and warehousing. With a focus on reliability and customer satisfaction, we have been serving businesses since 2021.</p>
-        <p><strong>Registered Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
-    </div>
-
-    <div class="section contact" id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:contact@patcargovadllc.click">contact@patcargovadllc.click</a></p>
-        <p><strong>Agent Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
-    </div>
-
-    <footer>
-        &copy; 2025 PAT Cargo VAD LLC. All rights reserved.
-    </footer>
-
-    <script>
-        // Intersection Observer for fade-in effect
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+  <footer>
+    <p>&copy; 2025 BAUDOT LOCATION — Real Estate Rental & Leasing</p>
+  </footer>
 
 </body>
 </html>
